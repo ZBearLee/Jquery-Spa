@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="demos-header">
+        <h1 class="demos-title">Notification</h1>
+    </header>
+    <div class="demos-content-padded">
+        <a href="" id="show-notification" class="weui-btn weui-btn_primary ">
+
+        </a>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>    
+    <script>
+        $(function () {
+            $(document).on('click', '#show-notifacation', function () {
+                //jquery扩展
+                $.noti({
+                    title: '中奖了',
+                    text: '点击领取腾讯撸啊撸杯二等奖',
+                    media: '<img src="http://jqweui.com/dist/demos/images/present.png">',
+                    data: {
+                        message: '逗你玩'
+                    },
+                    time: 3000,
+                    onClick: function (data) {
+                        $.alert(data.message)
+                    }
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>

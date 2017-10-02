@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery/2.1.2/jquery.min.js">
+    <style lang="">
+        .back_top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(222, 0, 0, .5)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back_top"></div>
+    <img src="www.baidu.com/zxc.png" alt="周星驰" width="300" height="200">
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //当设备宽度小于480px,alert是手机
+            //浏览器的嗅探
+            $(window).resize(function () {
+                if ($(window).width() < 481) {
+                    if (isPhone) return;
+                    isPhone = true;
+                    console.log('手机模式')
+                }
+                //resize是移动端屏幕调整的事件
+                // console.log($(window).width())
+                {
+                    console.log('手机模式')
+                }
+            })
+
+            //console.log(navigator.userAgent);//返回浏览器用户的代理头
+            //if (navigator.userAgent.match(/msie/i)) {
+            // alert('I am an old fashioned Internet Explosor')
+            //img 的事件之一onload
+
+            $('img').error(function () {
+                $(this).attr('src', 'http://ac-pvjnkart.clouddn.com/ffef641a628e2b5a7108.png')
+                //attr既可以get,又可以set
+            })
+        })
+    </script>
+</body>
+
+</html>
